@@ -10,20 +10,7 @@ if [ $status -ne 0 ]; then
   exit $status
 fi
 
-
-if [ "$1" = 'jupyter' ]
-then
-  exec "$@"
-else
-
-  # Start the second process
-  jupyter lab
-  status=$?
-  if [ $status -ne 0 ]; then
-    echo "Failed to start jupyter lab: $status"
-    exit $status
-  fi
-fi
+exec "$@"
 
 
 # TO-DO: Exit when either of two processes dies
