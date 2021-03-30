@@ -1,0 +1,53 @@
+
+    <html>
+    <head>
+      <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+      <meta content="utf-8" http-equiv="encoding">    
+      <script type="text/javascript" src="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.js"></script>
+      <link   type="text/css"       href="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.css" rel="stylesheet" >
+    </head>
+    <body>
+
+    <div id="2cc8f168-b4ed-4e9c-92a3-65fa89552d43"></div>
+
+    <script type="text/javascript">
+      var nodes = [{"id": "144", "label": "Apollo 13", "color": "rgb(0, 158, 73)"}, {"id": "16", "label": "Tom Cruise", "color": "rgb(255, 140, 0)"}, {"id": "19", "label": "Kevin Bacon..", "color": "rgb(255, 140, 0)"}, {"id": "71", "label": "Tom Hanks", "color": "rgb(255, 140, 0)"}, {"id": "15", "label": "A Few Good Men..", "color": "rgb(0, 158, 73)"}, {"id": "34", "label": "Meg Ryan", "color": "rgb(255, 140, 0)"}, {"id": "67", "label": "You've Got Mail..", "color": "rgb(0, 158, 73)"}, {"id": "29", "label": "Top Gun", "color": "rgb(0, 158, 73)"}, {"id": "78", "label": "Joe Versus the Volca..", "color": "rgb(0, 158, 73)"}, {"id": "130", "label": "The Green Mile..", "color": "rgb(0, 158, 73)"}, {"id": "37", "label": "Jerry Maguire..", "color": "rgb(0, 158, 73)"}, {"id": "42", "label": "Bonnie Hunt..", "color": "rgb(255, 140, 0)"}, {"id": "73", "label": "Sleepless in Seattle..", "color": "rgb(0, 158, 73)"}];
+      var edges = [{"from": "16", "to": "15", "label": "ACTED_IN"}, {"from": "16", "to": "29", "label": "ACTED_IN"}, {"from": "16", "to": "37", "label": "ACTED_IN"}, {"from": "19", "to": "144", "label": "ACTED_IN"}, {"from": "19", "to": "15", "label": "ACTED_IN"}, {"from": "71", "to": "144", "label": "ACTED_IN"}, {"from": "71", "to": "67", "label": "ACTED_IN"}, {"from": "71", "to": "78", "label": "ACTED_IN"}, {"from": "71", "to": "130", "label": "ACTED_IN"}, {"from": "71", "to": "73", "label": "ACTED_IN"}, {"from": "34", "to": "67", "label": "ACTED_IN"}, {"from": "34", "to": "29", "label": "ACTED_IN"}, {"from": "34", "to": "78", "label": "ACTED_IN"}, {"from": "34", "to": "73", "label": "ACTED_IN"}, {"from": "42", "to": "37", "label": "ACTED_IN"}, {"from": "42", "to": "130", "label": "ACTED_IN"}];
+
+      var container = document.getElementById("2cc8f168-b4ed-4e9c-92a3-65fa89552d43");
+
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'middle'
+              },
+              color: 'gray',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 0.5}
+              },
+              smooth: {enabled: false}
+          },
+          physics: {
+              enabled: true
+          }
+      };
+
+      var network = new vis.Network(container, data, options);
+
+    </script>
+    </body>
+    </html>
+    
