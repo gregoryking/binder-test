@@ -5,7 +5,7 @@ RUN apt-get -qq update && \
     apt-get -qq install --yes openjdk-8-jdk
 USER jovyan
 
-RUN pip install ipython-cypher py2neo
+RUN pip install ipython-cypher py2neo RISE
 
 # matplotlib
 RUN jupyter labextension install jupyter-matplotlib
@@ -48,12 +48,12 @@ USER jovyan
 ENV PATH="$NEO4J_HOME/bin:${PATH}"
 
 WORKDIR  /home/jovyan/
-ADD MarvelDemo.ipynb ./work/
+ADD Notebooks/* ./work/
 ADD notebook_setup.py ./work/
-# RUN mkdir ./work/figure
 
 # EXPOSE 7687
 # EXPOSE 7474
+# VOLUME /home/jovyan/work
 
 USER root
 COPY ./go.sh /
