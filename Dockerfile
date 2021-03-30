@@ -42,14 +42,16 @@ RUN rm neo4j-graph-data-science-${GDS_VERSION}-standalone.zip
 RUN mv neo4j-graph-data-science-${GDS_VERSION}-standalone.jar ${NEO4J_HOME}/plugins
 
 ADD neo4j.conf ${NEO4J_HOME}/conf/neo4j.conf
-RUN chown -R jovyan ${NEO4J_HOME}
+WORKDIR  /home/jovyan/
+ADD Notebooks/* ./work/
+ADD notebook_setup.py ./work/
+
+RUN chown -R jovyan /home/jovyan
 
 USER jovyan
 ENV PATH="$NEO4J_HOME/bin:${PATH}"
 
-WORKDIR  /home/jovyan/
-ADD Notebooks/* ./work/
-ADD notebook_setup.py ./work/
+
 
 # EXPOSE 7687
 # EXPOSE 7474
