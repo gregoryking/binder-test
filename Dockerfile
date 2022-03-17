@@ -1,4 +1,4 @@
-FROM jupyter/datascience-notebook:r-4.0.3
+FROM jupyter/datascience-notebook:r-4.1.2
 
 USER root
 RUN apt-get -qq update && \
